@@ -1,0 +1,15 @@
+{
+    "require": {
+        "pimple/pimple": "^3.2",
+        "sergiors/prelude": "dev-master",
+        "symfony/console": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sergiors\\Billing\\": "src"
+        },
+        "files": [
+            "src/props.php"
+        ]
+    }
+}

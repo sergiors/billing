@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+use Sergiors\Billing\Container;
+use Sergiors\Billing\Pimple\Service\ConsoleServiceProvider;
+
+require_once __DIR__ . '/../bootstrap.php';
+
+$container = new class extends Container
+{
+    public function registerProviders(): array
+    {
+        return [
+            new ConsoleServiceProvider,
+        ];
+    }
+};
+
+$container['bills'] = function () {
+    return require_once __DIR__ . '/../app/bills.php';
+};
+
+
+$container['console']->run();
